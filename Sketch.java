@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Sketch extends PApplet {
 	
@@ -11,25 +12,37 @@ public class Sketch extends PApplet {
     size(400, 400);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
+ 
   public void setup() {
-    background(210, 255, 173);
+    //background image
+    PImage imgBackground;
+    imgBackground = loadImage("Grass.png.png");
+    imgBackground.resize(width, height);
+    image(imgBackground, 0, 0);
   }
 
   /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
 
-    stroke(255);
-    line(50, 125, 70, 50);  
+    //Redrawing background to clear out the previous drawings 
+    PImage imgBackground;
+    imgBackground = loadImage("Grass.png.png");
+    imgBackground.resize(width, height);
+    image(imgBackground, 0, 0);
+
+    //Image animaton variables
+    PImage imgSlime;  
+    imgSlime = loadImage("RedSlime.png");
+    imgSlime.resize(200, 200);
+    image(imgSlime, 0, 0);
+
+
+    //Shape animation variables 
+
+
+
   }
   
   // define other methods down here.
