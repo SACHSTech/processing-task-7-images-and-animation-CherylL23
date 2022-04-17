@@ -32,7 +32,7 @@ public class Sketch extends PApplet {
     imgBackground.resize(width, height);
     image(imgBackground, 0, 0);
 
-    //Image animaton variables
+    //Image animaton variables ...
     PImage imgSlime;  
     imgSlime = loadImage("RedSlime.png");
     imgSlime.resize(200, 200);
