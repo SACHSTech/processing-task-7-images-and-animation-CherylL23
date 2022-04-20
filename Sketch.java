@@ -3,7 +3,7 @@ import processing.core.PImage;
 
 public class Sketch extends PApplet {
 	
-  //images
+  //images variables
 	PImage imgSlime;
   PImage imgBackground;
 
@@ -12,7 +12,7 @@ public class Sketch extends PApplet {
   float imageY = 40;
   float angle = 0;
 
-  //rectangle icecube
+  //rectangle icecube variables
   float iceX = 100;
   float iceY = 100;
   float ispeedX = 5;
@@ -20,12 +20,11 @@ public class Sketch extends PApplet {
   
 
   public void settings() {
-	// put your size call here
     size(400, 400);
   }
-
  
   public void setup() {
+
     //background image
     PImage imgBackground;
     imgBackground = loadImage("Grass.png.png");
@@ -50,7 +49,7 @@ public class Sketch extends PApplet {
     iceY = ispeedY + iceY;
 
     //preventing the icecube from moving off the screen
-    if(iceX < 0 || iceX > width - 100) {
+    if(iceX < 0 || iceX > width - 20) {
      ispeedX = ispeedX * -1;
     }
     
@@ -68,8 +67,5 @@ public class Sketch extends PApplet {
     imgSlime = loadImage("RedSlime.png");
     imgSlime.resize(100, 100);
     image(imgSlime, imageX, imageY);
-    
-
-    
   }
 }
