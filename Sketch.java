@@ -4,7 +4,7 @@ import processing.core.PImage;
 public class Sketch extends PApplet {
 	
   //images variables
-	PImage imgSlime;
+  PImage imgSlime;
   PImage imgBackground;
 
   //Image animaton variables
