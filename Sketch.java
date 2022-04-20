@@ -16,8 +16,7 @@ public class Sketch extends PApplet {
   float iceX = 100;
   float iceY = 100;
   float ispeedX = 5;
-  float ispeedY = 2;
-  
+  float ispeedY = 2; 
 
   public void settings() {
     size(400, 400);
