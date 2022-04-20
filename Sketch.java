@@ -1,36 +1,70 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Sketch extends PApplet {
 	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
+  //images variables
+  PImage imgSlime;
+  PImage imgBackground;
+
+  //Image animaton variables
+  float imageX = 50;
+  float imageY = 40;
+  float angle = 0;
+
+  //rectangle icecube variables
+  float iceX = 100;
+  float iceY = 100;
+  float ispeedX = 5;
+  float ispeedY = 2; 
+
   public void settings() {
-	// put your size call here
     size(400, 400);
   }
-
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
+ 
   public void setup() {
-    background(210, 255, 173);
+
+    //background image
+    PImage imgBackground;
+    imgBackground = loadImage("Grass.png.png");
+    imgBackground.resize(width, height);
+    image(imgBackground, 0, 0);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
-	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
 
-    stroke(255);
-    line(50, 125, 70, 50);  
+    //Redrawing background to clear out the previous drawings 
+    imgBackground = loadImage("Grass.png.png");
+    imgBackground.resize(width, height);
+    image(imgBackground, 0, 0);
+
+    //Icecube
+    stroke(23, 26, 230);
+    fill(23, 219, 230);
+    rect(iceX, iceY, 20, 20);
+
+    //shape animation
+    iceX = ispeedX + iceX;
+    iceY = ispeedY + iceY;
+
+    //preventing the icecube from moving off the screen
+    if(iceX < 0 || iceX > width - 20) {
+     ispeedX = ispeedX * -1;
+    }
+    
+    if(iceY < 200 || iceY < height) {
+     ispeedY = ispeedY * -1;
+    }
+
+    //Image animation  
+    translate(200, 180);
+    angle += 0.05;
+    rotate(angle);
+    
+    //Image
+    PImage imgSlime;
+    imgSlime = loadImage("RedSlime.png");
+    imgSlime.resize(100, 100);
+    image(imgSlime, imageX, imageY);
   }
-  
-  // define other methods down here.
 }
