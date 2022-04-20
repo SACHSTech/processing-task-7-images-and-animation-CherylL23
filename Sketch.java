@@ -52,7 +52,7 @@ public class Sketch extends PApplet {
      ispeedX = ispeedX * -1;
     }
     
-    if( iceY < 200 || iceY < height) {
+    if(iceY < 200 || iceY < height) {
      ispeedY = ispeedY * -1;
     }
 
